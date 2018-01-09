@@ -1,0 +1,20 @@
+--- # webserver setup
+- hosts: server2
+  remote_user: test1
+  become: yes
+  tasks:
+     - name: installing httpd package
+       yum: name={{item}} state=installed
+       with_items:
+              - httpd
+              - curl
+              - telnet
+     #  register: result
+    # - debug: var=result
+     - name: copy index.html
+       copy: src=index.html dest=/var/www/html/index.html
+       when: ansible_os_family == 'RedHat'
+     - name: start httpd service
+       service: name=httpd state=started
+       register: result1
+     - debug: var=result1

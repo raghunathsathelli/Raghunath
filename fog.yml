@@ -1,0 +1,11 @@
+---
+- hosts: server3
+  remote_user: test1
+  become: yes
+  tasks:
+       - shell: /usr/bin/foo
+         register: foo_result
+         ignore_errors: True
+
+       - shell: /usr/bin/bar
+         when: foo_result.rc == 5

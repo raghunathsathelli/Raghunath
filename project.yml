@@ -1,0 +1,25 @@
+--- # writing first playbook
+- hosts: server2
+  remote_user: test1
+  become: yes
+  vars:
+       pkg: httpd
+  vars_files:
+      - file.yml
+  vars_prompt:
+      - name: pkg2
+        prompt: Enter the package name to be installed
+        private: no
+  tasks: 
+      - name: Installing {{pkg}} webserver
+        yum: name={{pkg}} state=installed
+      - name: Installing {{pkg1}} software
+        yum: name={{pkg1}} state=installed
+      - name: Installing {{pkg2}} software curl
+        yum: name={{pkg2}} state=installed
+      - name: copy index.html
+        copy: src=index.html dest=/var/www/html/index.html
+#      - name: start webserver
+#        service: name={{pkg}} state=started
+      - name: restart httpd service
+        service: name={{pkg}} state=restarted

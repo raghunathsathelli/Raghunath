@@ -1,0 +1,30 @@
+GNOME_KEYRING_SOCKET=/tmp/keyring-4zzw4A/socket
+SSH_AUTH_SOCK=/tmp/keyring-4zzw4A/socket.ssh
+gnome-session[14251]: WARNING: Could not launch application 'linc-cleanup-sockets.desktop': Unable to start application: Failed to execute child process "/usr/bin/linc-cleanup-sockets" (No such file or directory)
+
+(process:14436): GLib-WARNING **: goption.c:2132: ignoring no-arg, optional-arg or filename flags (8) on option of type 0
+
+(process:14436): GLib-WARNING **: goption.c:2132: ignoring no-arg, optional-arg or filename flags (8) on option of type 0
+
+(process:14436): GLib-WARNING **: goption.c:2132: ignoring no-arg, optional-arg or filename flags (8) on option of type 0
+Failed to play sound: File or data not found
+
+(polkit-gnome-authentication-agent-1:14426): GLib-GObject-WARNING **: cannot register existing type `_PolkitError'
+
+(polkit-gnome-authentication-agent-1:14426): GLib-CRITICAL **: g_once_init_leave: assertion `initialization_value != 0' failed
+** Message: applet now removed from the notification area
+Initializing nautilus-gdu extension
+Initializing nautilus-open-terminal extension
+** Message: applet now embedded in the notification area
+gnome-session: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+** Message: <info>  disconnected by the session bus.
+
+** Message: Got disconnected from the session message bus; retrying to reconnect every 10 seconds
+gnome-settings-daemon: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+gdu-notification-daemon: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+abrt-applet: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+polkit-gnome-authentication-agent-1: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+nm-applet: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+gnome-screensaver: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+XOpenDisplay() failed
+Memory pool destroyed but not all memory blocks freed! 4 remain.

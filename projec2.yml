@@ -1,0 +1,18 @@
+--- # webserver setup
+- hosts: server2
+  remote_user: test1
+  become: yes
+  tasks:
+     - name: installing httpd package
+       yum: name=httpd state=installed
+       tags:
+           - install
+     - name: copy index.html
+       copy: src=index.html dest=/var/www/html/index.html
+       tags:
+           - copy
+     - name: start httpd service
+       service: name=httpd state=started
+       tags:
+           - always
+

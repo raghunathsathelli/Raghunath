@@ -1,0 +1,7 @@
+---
+- hosts: server2
+  remote_user: test1
+  become: yes
+  tasks:
+        - name: Installing httpd 
+          command: yum install -y httpd

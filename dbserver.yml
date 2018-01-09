@@ -1,0 +1,19 @@
+---
+- hosts: server3
+  vars:
+    mysql_port: 8000
+    max_clients: 2000
+  remote_user: test1
+  become: yes
+  tasks:
+       - name: ensure mysql is at latest version
+         yum: name=mysql-server state=latest
+       - name: write the mysql  config file
+         template: src=mysql.j2 dest=/var/www/html
+         notify:
+          - restart mysqld
+       - name: ensure mysqld is running (and enable it at boot)
+         service: name=mysqld state=started enabled=yes
+  handlers:
+       - name: restart mysqld
+         service: name=mysqld state=restarted 

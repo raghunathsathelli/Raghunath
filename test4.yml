@@ -1,0 +1,7 @@
+--- # webserver setup
+- hosts: server2
+  remote_user: test1
+  become: yes
+  tasks:
+       - name: Copying index file
+         shell: echo "checking" > /var/www/html/index.html 
